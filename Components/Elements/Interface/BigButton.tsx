@@ -1,25 +1,29 @@
 import React from "react";
-import { StyleSheet, Text, Pressable } from "react-native";
+import { StyleSheet, Text, Pressable, StyleProp, ViewStyle } from "react-native";
 import { GestureResponderEvent } from "react-native/types";
 import { ColorPalette } from "../../../assets/Globals";
 
 export interface BigButtonProps {
   text: String;
   onPress?: null | ((event: GestureResponderEvent) => void) | undefined;
-  active?: true | boolean;
+  disabled?: true | boolean;
+  style?: StyleProp<ViewStyle>
 }
 
-export function BigButton({ text, onPress, active }: BigButtonProps) {
+export function BigButton({ text, onPress, style, disabled }: BigButtonProps) {
+  let buttonColorDecider = (disabled: boolean | undefined, pressed: boolean) => {
+    if(disabled) return ColorPalette.Gray2
+    else return pressed ?  ColorPalette.PrimaryFaded : ColorPalette.Primary
+  }
+
   return (
     <Pressable
+      disabled={disabled}
       onPress={onPress}
       style={({ pressed }) => [
-        {
-          backgroundColor: pressed
-            ? ColorPalette.PrimaryFaded
-            : ColorPalette.Primary,
-        },
+        { backgroundColor: buttonColorDecider(disabled, pressed) },
         styles.button,
+        style,
       ]}
       hitSlop={{
         bottom: 5,
