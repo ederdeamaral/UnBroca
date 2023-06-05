@@ -3,7 +3,7 @@ import { StrictMode } from "react";
 import { View } from "react-native";
 
 import { ColorPalette } from "./assets/Globals";
-import { MainClientPage } from "./Components/Pages/MainClientPage"
+import { MainClientPage } from "./Components/Pages"
 
 export default function App() {
   return (
