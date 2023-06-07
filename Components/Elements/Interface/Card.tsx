@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, Text, StyleSheet, Pressable } from "react-native";
+import { View, Image, Text, StyleSheet, Pressable, StyleProp, ViewStyle } from "react-native";
 import { ColorPalette } from "../../../assets/Globals";
 
 export interface CardProps {
@@ -8,11 +8,12 @@ export interface CardProps {
   price: string;
   imageSrc: string;
   onPress?: () => void;
+  style?: StyleProp<ViewStyle>
 }
 
-export function Card({ name, distance, price, imageSrc, onPress}: CardProps) {
+export function Card({ name, distance, price, imageSrc, onPress, style}: CardProps) {
   return (
-    <Pressable style={styles.card} onPress={onPress}>
+    <Pressable style={[styles.card, style]} onPress={onPress}>
       <View style={styles.whiteBoard}></View>
       
       <Image source={{ uri: imageSrc }} style={styles.cardImage} />
