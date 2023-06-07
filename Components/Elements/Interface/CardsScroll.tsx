@@ -1,12 +1,11 @@
 import { FlatList, ScrollView, StyleSheet, View } from "react-native";
-import React from "react";
 import { Card, CardProps } from "./Card";
 
 interface Props { 
   cards? : CardProps[]
 };
 
-export const CardsScroll = ({cards}: Props) => {
+export function CardsScroll({cards}: Props) {
   return (
     <FlatList
       data={cards}

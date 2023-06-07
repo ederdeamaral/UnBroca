@@ -1,8 +1,6 @@
 import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
 import { SearchBox, CardsScroll } from "../../Elements/Interface";
 import { Header } from "../../Elements/TextStyles";
-import { useState } from "react";
-
 
 const dummyCards = Array.from({ length: 30 }).map((_, i) => {
   return {
@@ -16,8 +14,6 @@ const dummyCards = Array.from({ length: 30 }).map((_, i) => {
 interface Props {}
 
 export function MainClientPage({}: Props) {
-  let [selectedTab, setSelectedTab] = useState("marmitas")
-
   return (
     <View style={styles.container}>
       {/* TODO: Barra de navegação lateral, botão do mapa */}
