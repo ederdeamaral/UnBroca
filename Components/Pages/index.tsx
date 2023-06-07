@@ -1,1 +1,1 @@
-export * from "./MainClientPage"
+export * from "./MainClientPage/MainClientPage"
