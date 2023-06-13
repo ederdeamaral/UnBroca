@@ -13,7 +13,7 @@ const dummyCards = Array.from({ length: 30 }).map((_, i) => {
 
 interface Props {}
 
-export function MainClientPage({}: Props) {
+export function MainShopperPage({}: Props) {
   return (
     <View style={styles.container}>
       {/* TODO: Barra de navegação lateral, botão do mapa */}
