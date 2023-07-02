@@ -6,7 +6,7 @@ import { BigButton, Header, StyledTextInput } from "../../ui";
 interface RegisterProps {
   navigation: any;
 }
-
+//teste
 export function Register({ navigation }: RegisterProps) {
   const [Nome, setNome] = useState("Click me!");
   const [Email, setEmail] = useState("Click me!");
